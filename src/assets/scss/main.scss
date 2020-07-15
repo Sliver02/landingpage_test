@@ -1,0 +1,37 @@
+@import 'font_face';
+@import 'variables';
+@import 'transitions';
+@import 'mixin';
+
+$fa-font-path: "./assets/fontawesome/web-fonts-with-css/webfonts";
+@import "../fontawesome/web-fonts-with-css/scss/fontawesome.scss";
+@import "../fontawesome/web-fonts-with-css/scss/fa-solid.scss";
+@import "../fontawesome/web-fonts-with-css/scss/fa-regular.scss";
+
+// Views
+@import 'views/home';
+@import 'views/test';
+
+// Components
+@import 'components/navbar';
+
+// Reset
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: Gotham, Arial, sans-serif;
+
+    font-weight: 200;
+    line-height: 24pt;
+
+    overflow-x: hidden;
+}
+
+a, a:hover, a:visited {
+    color: black;
+    text-decoration: none;
+}

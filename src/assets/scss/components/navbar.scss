@@ -1,0 +1,59 @@
+.navbar {
+    @include flex-center();
+    justify-content: space-between;
+    position: fixed;
+
+    width: 100%;
+    
+    z-index: 10;
+    padding: 20px 40px;
+
+    color: white;
+
+    transition: background .6s;
+    
+    & a,& a:hover,& a:visited {
+        color: white;
+    }
+    
+    &--dark {
+        background: rgba(black, .8);
+    }
+
+    &__logo {
+        @include flex-center();
+    }
+
+    &__burger {
+        cursor: pointer;
+        margin-bottom: 5px;
+        margin-left: auto;
+        font-size: 1.8rem;
+    }
+
+    &__nav {
+        @include flex-center();
+        flex-direction: column;
+        position: absolute;
+        z-index: -1;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        background: black;
+
+        font-size: 1.2rem;
+
+        a {
+            @include flex-center();
+
+            min-width: 200px;
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px white solid;
+        }
+    }
+}
