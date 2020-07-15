@@ -5,10 +5,10 @@ export default {
     closeMenu(state) {
         state.showMenu = false;
     },
+    openMenu(state) {
+        state.showMenu = true;
+    },
     switchPage(state, index) {
-        if (state.pageIndex == index) {
-            state.showPage = !state.showPage;
-        }
         state.pageIndex = index;
     }
 }

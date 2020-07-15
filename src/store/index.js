@@ -14,8 +14,8 @@ import getters from "./getters";
 
 export default new Vuex.Store({
   state: {
-    showMenu: false,
-    showPage: false,
+    showMenu: true,
+    showPage: true,
     pageIndex: 0,
     slides,
     articles,

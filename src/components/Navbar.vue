@@ -92,6 +92,13 @@ export default {
         showMenu: function(newValue) {
             this.blockScroll(newValue);
         },
+        clientWidth: function(newValue) {
+            if (newValue >= 600) {
+                this.openMenu();
+            } else {
+                this.closeMenu();
+            }
+        }
     },
 }
 </script>
