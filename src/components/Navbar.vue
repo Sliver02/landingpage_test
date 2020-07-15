@@ -10,7 +10,7 @@
       <i class="navbar__burger fa fa-bars" @click="toggleMenu()"></i>
       
       <transition name="slide-left">
-        <div class="navbar__nav" v-if="showMenu">
+        <div class="navbar__nav" v-if="showMenu || clientWidth >= 600">
             <div @click="closeMenu()" v-for="(link, index) in links" :key="index">
                 <router-link :to="'/'+link.url">
                         {{link.name}}
@@ -32,6 +32,7 @@ export default {
     data() {
         return {
             scrollPosition: null,
+            clientWidth: null,
             links: [
                 {
                     url: 'we-are',
@@ -45,12 +46,17 @@ export default {
                     url: 'careers',
                     name: 'careers',
                 },
+                {
+                    url: 'contanct',
+                    name: 'contact us',
+                },
             ]
         }
     },
 
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
+        window.addEventListener('resize', this.tabletSize);
     },
 
     methods: {
@@ -61,6 +67,10 @@ export default {
         updateScroll() {
             this.scrollPosition = window.scrollY;
         },
+        tabletSize() {
+            this.clientWidth = window.innerWidth;
+            console.log(this.clientWidth)
+        },
         blockScroll(newValue) {
             // console.log(newValue);
             if (newValue === true) {
@@ -68,7 +78,8 @@ export default {
             } else {
                 document.querySelector('html').style.overflowY = 'auto';
             }
-        }
+        },
+        
     },   
 
     computed: {

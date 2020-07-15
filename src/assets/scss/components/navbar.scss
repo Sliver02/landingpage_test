@@ -56,4 +56,34 @@
             border: 1px white solid;
         }
     }
+
+    @include for-tablet-portrait-up {
+        padding: 40px 40px;
+        transition: padding .5s;
+
+        &--dark {
+            padding: 20px 40px;
+        }
+
+        &__burger {
+            display: none;
+        }
+
+        &__nav {
+            position: relative;
+            flex-direction: row;
+            background: none;
+            height: auto;
+            width: auto;
+            font-size: 1rem;
+
+            a {
+                border: none;
+                min-width: auto;
+                padding: 0 10px;
+                margin: 0;
+                margin-left: 10px;
+            }
+        }
+    }
 }

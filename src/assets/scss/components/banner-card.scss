@@ -1,25 +1,6 @@
 .banner {
-    // height: 300px;
-    // width: 100%;
     display: flex;
     flex-direction: column;
-
-    @include for-tablet-portrait-up {
-        
-    }
-
-    @include for-tablet-landscape-up {
-        flex-direction: row-reverse;
-
-        &--dark {
-            flex-direction: row;
-
-            .banner__text {
-                align-items: flex-start;
-                text-align: left;
-            }
-        }
-    }
 
     &--dark {
         @include dark-theme();
@@ -38,8 +19,7 @@
     }
 
     &__img {
-        display: flex;
-        justify-content: center;
+        @include flex-center();
         width: 100vw;
         height: 400px;
         position: relative;
@@ -51,37 +31,14 @@
             max-height: 300px;
             min-height: 100%;
             min-width: 100%;
-
-            @include for-tablet-portrait-up {
-                max-height: auto;
-            }
-        }
-
-        @include for-tablet-portrait-up {
-            height: 500px;
-        }
-
-        @include for-tablet-landscape-up {
-            width: 60vw;
-            height: 500px;
         }
     }
 
     &__text {
         display: flex;
+        justify-content: center;
         flex-direction: column;
         padding: 80px 20px;
-
-        @include for-tablet-portrait-up {
-            padding: 80px;
-        }
-
-        @include for-tablet-landscape-up {
-            width: 40vw;
-            align-items: flex-end;
-            text-align: right;
-            padding: 80px 50px;
-        }
     }
         &__desc {
             margin: 30px 0;
@@ -100,4 +57,48 @@
                 margin-left: 10px;
             }
         }
+
+
+    @include for-tablet-portrait-up {
+        &__img {
+            height: 500px;
+        }
+        &__text {
+            padding: 80px;
+        }
+    }
+    
+    @include for-tablet-landscape-up {
+
+        flex-direction: row-reverse;
+
+        &--dark {
+            flex-direction: row;
+
+            .banner__text {
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+        &__img {
+            width: 60vw;
+            height: 500px;
+
+            img {
+                max-height: none;
+            }
+        }
+        &__text {
+            width: 40vw;
+            align-items: flex-end;
+            text-align: right;
+            padding: 80px 50px;
+        }
+    }
+    
+    @include for-big-desktop-up {
+        &__img {
+            height: 500px;
+        }
+    }
 }
