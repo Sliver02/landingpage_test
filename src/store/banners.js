@@ -1,20 +1,20 @@
 export default [
     {
         title: 'we<br>are.',
-        desc: 'Consectetur adipiscing elit.<br>Nulla condimentum tortor sem.',
-        link: 'the players',
         url: 'we-are',
+        desc: 'Consectetur adipiscing elit.<br>Nulla condimentum tortor sem.',
+        btn: 'the players',
     },
     {
         title: 'we<br>do.',
-        desc: 'Consectetur adipiscing elit.<br>Nulla condimentum tortor sem.',
-        link: 'the projects',
         url: 'we-do',
+        desc: 'Consectetur adipiscing elit.<br>Nulla condimentum tortor sem.',
+        btn: 'the projects',
     },
     {
         title: 'careers.',
-        desc: 'Consectetur adipiscing elit.<br>Nulla condimentum tortor sem.',
-        link: 'the positions',
         url: 'carrers',
+        desc: 'Consectetur adipiscing elit.<br>Nulla condimentum tortor sem.',
+        btn: 'the positions',
     },
 ]

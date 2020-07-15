@@ -1,9 +1,35 @@
 // Components
 @import '../components/slider';
-@import '../components/banners';
+@import '../components/article-card';
+@import '../components/banner-card';
+@import '../components/accordion';
+@import '../components/contact';
 
 .home {
-    &__section {
+    &__article-section {
+        @include flex-center();
+        flex-wrap: wrap;
+        padding: 80px 0;
+        background: $light-gray;
+    }
+
+    &__banner-section {
         
     }
+
+    &__accordion-section {
+        @include flex-center();
+        background: $light-gray;
+    }
+
+    &__contact-section {
+        @include flex-center();
+        @include dark-theme();
+        padding: 80px 20px;
+
+        @include for-tablet-portrait-up {
+            padding: 80px 40px;
+        }
+    }
+
 }

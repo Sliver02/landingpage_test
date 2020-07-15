@@ -1,12 +1,12 @@
-@import 'font_face';
+@import 'font-face';
 @import 'variables';
 @import 'transitions';
 @import 'mixin';
 
-$fa-font-path: "./assets/fontawesome/web-fonts-with-css/webfonts";
-@import "../fontawesome/web-fonts-with-css/scss/fontawesome.scss";
-@import "../fontawesome/web-fonts-with-css/scss/fa-solid.scss";
-@import "../fontawesome/web-fonts-with-css/scss/fa-regular.scss";
+$fa-font-path: "./assets/fontawesome/webfonts";
+@import "../fontawesome/scss/fontawesome.scss";
+@import "../fontawesome/scss/fa-solid.scss";
+@import "../fontawesome/scss/fa-regular.scss";
 
 // Views
 @import 'views/home';
@@ -34,4 +34,10 @@ html, body {
 a, a:hover, a:visited {
     color: black;
     text-decoration: none;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: .9;
 }

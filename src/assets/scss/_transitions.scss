@@ -1,18 +1,55 @@
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-left-enter-active {
-    transition: transform .5s ease-out;
-    -webkit-transition: transform .5s ease-out;
-    -moz-transition: transform .5s ease-out;
+    transition: transform .3s ease-out;
+    -webkit-transition: transform .3s ease-out;
+    -moz-transition: transform .3s ease-out;
 }
 .slide-left-leave-active {
-    transition: transform .5s ease-out;
-    -webkit-transition: transform .5s ease-out;
-    -moz-transition: transform .5s ease-out;
+    transition: transform .3s ease-out;
+    -webkit-transition: transform .3s ease-out;
+    -moz-transition: transform .3s ease-out;
 }
 .slide-left-enter, .slide-left-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.expand-enter-active {
+    transition: transform .3s ease-out;
+    -webkit-transition: transform .3s ease-out;
+    -moz-transition: transform .3s ease-out;
+}
+.expand-leave-active {
+    transition: height .3s ease-out;
+    -webkit-transition: height .3s ease-out;
+    -moz-transition: height .3s ease-out;
+}
+.expand-enter, .expand-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+    height: 0;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.fade-out-enter-active {
+    transition: opacity 2.5s ease-in;
+    -webkit-transition: opacity 2.5s ease-in;
+    -moz-transition: opacity 2.5s ease-in;
+}
+.fade-out-leave-active {
+    transition: transform 1s ease-in;
+    -webkit-transition: transform 1s ease-in;
+    -moz-transition: transform 1s ease-in;
+}
+.fade-out-enter 
+/* .slide-fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+.fade-out-leave-to {
+    transform: translateX(100vw);
 }
