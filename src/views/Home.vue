@@ -1,20 +1,20 @@
 <template>
     <div class="home">
-        <slider></slider>
+        <slider id="slider"></slider>
         
         <div class="home__article-section">
             <article-card v-for="(article, index) in articles" :key="index" :article="article"></article-card>
         </div>
 
         <div class="home__banner-section">
-            <banner-card v-for="(banner, index) in banners" :key="index" :banner="banner" :index="index"></banner-card>
+            <banner-card v-for="(banner, index) in banners" :key="index" :banner="banner" :index="index" :id="banner.url"></banner-card>
         </div>
 
         <div class="home__accordion-section">
             <accordion></accordion>
         </div>
 
-        <div class="home__contact-section">
+        <div id="contact" class="home__contact-section">
             <contact></contact>
         </div>
     </div>

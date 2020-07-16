@@ -46,15 +46,17 @@
         background: black;
 
         font-size: 1.2rem;
+    }
 
-        a {
-            @include flex-center();
+    &__link {
+        @include flex-center();
 
-            min-width: 200px;
-            margin: 15px 0;
-            padding: 10px;
-            border: 1px white solid;
-        }
+        min-width: 200px;
+        margin: 15px 0;
+        padding: 10px;
+        border: 1px white solid;
+
+        cursor: pointer;
     }
 
     @include for-tablet-portrait-up {
@@ -76,14 +78,14 @@
             height: auto;
             width: auto;
             font-size: 1rem;
+        }
 
-            a {
-                border: none;
-                min-width: auto;
-                padding: 0 10px;
-                margin: 0;
-                margin-left: 10px;
-            }
+        &__link {
+            border: none;
+            min-width: auto;
+            padding: 0 10px;
+            margin: 0;
+            margin-left: 10px;
         }
     }
 }

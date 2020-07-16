@@ -13,7 +13,7 @@ export default [
     },
     {
         title: 'careers.',
-        url: 'carrers',
+        url: 'careers',
         desc: 'Consectetur adipiscing elit.<br>Nulla condimentum tortor sem.',
         btn: 'the positions',
     },

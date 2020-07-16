@@ -2,7 +2,7 @@
     <div class="navbar" :class="{'navbar--dark': scrollPosition > 100}">
 
         <router-link to="/">
-            <div class="navbar__logo" @click="closeMenu()">
+            <div class="navbar__logo" @click="scrollTo('slider')">
                 <img :src="require('../assets/img/logo-playground-white.png')" alt=""> 
             </div>
         </router-link>
@@ -11,10 +11,8 @@
       
       <transition name="slide-left">
         <div class="navbar__nav" v-if="showMenu || clientWidth >= 600">
-            <div @click="closeMenu()" v-for="(link, index) in links" :key="index">
-                <router-link :to="'/'+link.url">
-                        {{link.name}}
-                </router-link>
+            <div v-for="(link, index) in links" :key="index" @click="scrollTo(link.url)" class="navbar__link">
+                    {{link.name}}
             </div>
         </div>
       </transition>
@@ -47,7 +45,7 @@ export default {
                     name: 'careers',
                 },
                 {
-                    url: 'contanct',
+                    url: 'contact',
                     name: 'contact us',
                 },
             ]
@@ -79,7 +77,13 @@ export default {
                 document.querySelector('html').style.overflowY = 'auto';
             }
         },
-        
+        scrollTo(index) {
+            if (this.clientWidth >= 600){
+                this.closeMenu();
+            }
+
+            document.querySelector('#'+index).scrollIntoView({behavior: "smooth", block: "center"});
+        }
     },   
 
     computed: {
