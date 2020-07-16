@@ -18,9 +18,9 @@
                 <label>Don't fill this if u're human:  <input name="bot-field"> </label>
             </div>
 
-            <input class="contact__name" placeholder="name" v-model="form.name" name="name" id="name" type="text" required>
+            <input class="contact__name" placeholder="name" v-model="form.name" name="name" id="name" type="text">
 
-            <input class="contact__surename" placeholder="surename" v-model="form.surename" name="surename" id="surename" type="text" required>
+            <input class="contact__surename" placeholder="second name" v-model="form.surename" name="surename" id="surename" type="text">
 
             <input class="contact__email" placeholder="email" v-model="form.email" name="email" id="email" type="email" required>
 

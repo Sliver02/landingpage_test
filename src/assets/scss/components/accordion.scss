@@ -2,6 +2,8 @@
     padding: 2px 4px;
     width: 100%;
     max-width: 1440px;
+    min-height: 300px;
+    position: relative;
 
     &__page {
         padding: 2px 0;
@@ -15,7 +17,7 @@
     }
 
     &__text {
-        padding: 20px;
+        padding: 40px 20px;
         background: white;
         overflow: hidden;
         transform-origin: top;
@@ -24,6 +26,21 @@
 
     &__tab {
 
+    }
+
+    &__load {
+        @include flex-center();
+        position: absolute;
+        z-index: 8;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        font-size: 2rem;
+
+        i {
+            @include flex-center();
+        }
     }
 
     i {
@@ -46,6 +63,10 @@
         &__header {
             padding: 10px 30px;
         }
+
+        &__text {
+            padding: 40px;
+        }
     }
 
     @include for-tablet-landscape-up {
@@ -59,10 +80,13 @@
         }
         &__tab {
             background: white;
-            padding: 60px 120px;
             min-height: 300px;
             width: 100%;
             line-height: 1.5rem;
+        }
+
+        &__text {
+            padding: 60px 80px;
         }
     }
 
@@ -71,7 +95,8 @@
         &__header {
             padding: 10px 40px;
         }
-        &__tab {
+        &__text {
+            padding: 60px 120px;
         }
     }
 }

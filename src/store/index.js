@@ -6,7 +6,6 @@ Vue.use(Vuex)
 import slides from "./slides";
 import articles from "./articles";
 import banners from "./banners";
-import accordion from "./accordion";
 
 import mutations from "./mutations";
 import actions from "./actions";
@@ -20,7 +19,6 @@ export default new Vuex.Store({
     slides,
     articles,
     banners,
-    accordion,
   },
   mutations,
   actions,
