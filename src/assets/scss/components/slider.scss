@@ -12,6 +12,10 @@
         height: 700px;
     }
 
+    @include for-big-desktop-up {
+        height: 700px;
+    }
+
     &__slide {
         position: absolute;
         width: 100%;
@@ -47,6 +51,10 @@
 
                 @include for-tablet-portrait-up {
                     max-height: 100vh;
+                }
+
+                @include for-desktop-up {
+                    max-height: none;
                 }
             }
         }

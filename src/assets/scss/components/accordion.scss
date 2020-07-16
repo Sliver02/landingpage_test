@@ -13,7 +13,7 @@
         cursor: pointer;
         color: black;
         background: $gray;
-        padding: 10px 20px;
+        padding: 20px 30px;
     }
 
     &__text {
@@ -21,7 +21,8 @@
         background: white;
         overflow: hidden;
         transform-origin: top;
-        line-height: 1rem;
+        line-height: 1.3rem;
+        font-size: 0.9rem;
     }
 
     &__tab {
@@ -60,10 +61,6 @@
     @include for-tablet-portrait-up {
         padding: 80px 40px;
 
-        &__header {
-            padding: 10px 30px;
-        }
-
         &__text {
             padding: 40px;
         }
@@ -80,9 +77,8 @@
         }
         &__tab {
             background: white;
-            min-height: 300px;
+            min-height: 400px;
             width: 100%;
-            line-height: 1.5rem;
         }
 
         &__text {
@@ -92,11 +88,8 @@
 
     @include for-desktop-up {
 
-        &__header {
-            padding: 10px 40px;
-        }
         &__text {
-            padding: 60px 120px;
+            padding: 50px 80px;
         }
     }
 }

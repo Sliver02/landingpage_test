@@ -50,11 +50,18 @@
             padding: 10px 30px;
             text-transform: uppercase;
             letter-spacing: 1px;
+
+            &:hover {
+                i {
+                    transform: translateX(5px);
+                }
+            }
             
             i {
                 display: flex;
                 align-items: center;
                 margin-left: 10px;
+                transition: transform .3s;
             }
         }
 
