@@ -11,7 +11,7 @@
       
       <transition name="slide-left">
         <div class="navbar__nav" v-if="showMenu || clientWidth >= 600">
-            <div v-for="(link, index) in links" :key="index" @click="scrollTo(link.url)" class="navbar__link">
+            <div v-for="(link, index) in links" :key="index" @click="clientWidth >= 600 ? scrollTo(link.url) : closeMenu(); scrollTo(link.url)" class="navbar__link">
                     {{link.name}}
             </div>
         </div>
@@ -55,6 +55,7 @@ export default {
     mounted() {
         window.addEventListener('scroll', this.updateScroll);
         window.addEventListener('resize', this.tabletSize);
+        this.clientWidth = window.innerWidth;
     },
 
     methods: {
@@ -67,7 +68,6 @@ export default {
         },
         tabletSize() {
             this.clientWidth = window.innerWidth;
-            console.log(this.clientWidth)
         },
         blockScroll(newValue) {
             // console.log(newValue);
@@ -78,10 +78,6 @@ export default {
             }
         },
         scrollTo(index) {
-            if (this.clientWidth >= 600){
-                this.closeMenu();
-            }
-
             document.querySelector('#'+index).scrollIntoView({behavior: "smooth", block: "center"});
         }
     },   
@@ -97,9 +93,7 @@ export default {
             this.blockScroll(newValue);
         },
         clientWidth: function(newValue) {
-            if (newValue >= 600) {
-                this.openMenu();
-            } else {
+            if (newValue < 600) {
                 this.closeMenu();
             }
         }

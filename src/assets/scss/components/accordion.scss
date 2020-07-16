@@ -20,19 +20,10 @@
         overflow: hidden;
         transform-origin: top;
         line-height: 1rem;
-
-        @include for-tablet-landscape-up {
-            display: none;
-        }
     }
 
     &__tab {
-        display: none;
 
-
-        @include for-tablet-landscape-up {
-            display: inline-block;
-        }
     }
 
     i {

@@ -9,7 +9,7 @@
                     </p>
                 </div>
 
-                <div class="accordion__text" v-if="pageIndex == index && showPage">
+                <div class="accordion__text" v-if="pageIndex == index && showPage && clientWidth < 900">
                     <p v-for="(row, index) in article.content" :key="index">
                         {{row}}
                     </p>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="accordion__tab">
-            <div v-if="showPage">
+            <div class="accordion__text" v-if="showPage && clientWidth >= 900">
                 <p v-for="(row, index) in accordion[pageIndex].content" :key="index">
                     {{row}}
                 </p>
@@ -36,13 +36,22 @@ export default {
 
     data() {
         return {
+            clientWidth: null,
         }
+    },
+
+    mounted() {
+        window.addEventListener('resize', this.tabletSize);
+        this.clientWidth = window.innerWidth;
+
     },
 
     methods: {
         ...mapMutations([
             'switchPage',
         ]),
+        tabletSize() {
+        },
     },
 
     computed: {
@@ -51,6 +60,6 @@ export default {
             'showPage',
             'accordion',
         ]),
-    }
+    },
 }
 </script>
